@@ -3,7 +3,7 @@
 
 
 
-가상 환경 설치 및 생성
+[가상 환경 설치 및 생성]
 ```
 # virtualenv 설치
 $ pip3 install virtualenv virtualenvwrapper
@@ -20,7 +20,7 @@ $ deactivate
 
 
 
-가상환경 설정
+[가상환경 설정]
 ```
 # 가상 환경 접속
 $ source django_pace/bin/activate
@@ -40,7 +40,7 @@ $ pip install django
 
 
 
-local website 열기
+[local website 열기]
 
 ```
 # 가상 환경 접속
