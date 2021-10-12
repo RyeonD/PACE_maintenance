@@ -1,0 +1,290 @@
+{% load static%} 
+
+<html>
+<head>
+    <title>Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+        * {
+            font-family: 'Gugi', cursive;
+        }
+
+        html,body{
+            height:100%;
+            margin: 0 auto;
+        }
+
+        .storeBox {
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #11054E;
+        }
+
+        .header {
+            width: 100%;
+            height: 13%;
+            font-size: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .contentBox {
+            width: 90%;
+            height: 80%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            background-color:#3803FA;
+            border-radius: 40px 0px 40px 40px;
+        }
+
+        .menuBox{
+            width: 65%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: space-around;
+            flex-direction: column;
+        }
+
+        .tableBox1 {
+            margin: 5%;
+            height: 50%;
+            border: 2px solid white;
+            overflow: auto;
+            background-color: white;
+        }
+
+        .tableBox1::-webkit-scrollbar {
+            width: 15px;
+        }
+        .tableBox1::-webkit-scrollbar-thumb {
+            background-color: grey;
+        }
+        .tableBox1::-webkit-scrollbar-track {
+            background-color: #d4d6d9;
+        }
+
+        .menuTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: x-large;
+        }
+
+        .menuTable th {
+            background-color: #3803fa;
+            color: white;
+        }
+
+        .menuTable #num {
+            text-align: center;
+        }
+
+        .menuTable #price {
+            padding: 0 25px 0 0;
+            text-align: right;
+        }
+
+        .menuTable tbody tr:nth-child(even) {
+            background-color: #c6c8cc;
+        }
+
+        .tableBox2 {
+            margin: 5%;
+            height: 30%;
+            border: 2px solid white;
+            background-color: white;
+        }
+
+        .totalTable {
+            width: 100%;
+            height: 100%;
+            font-size: x-large;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        .totalTable #num{
+            text-align: right;
+            padding: 0 15px 0 0;
+            border: 2px solid black;
+        }
+
+        .totalTable #list{
+            padding: 0 0 0 15px;
+            color: white;
+            background-color: #3803fa;
+            border: 2px solid black;
+        }
+
+        .useBox {
+            width: 35%;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: space-around;
+            flex-direction: column;
+        }
+
+        .useBox div {
+            height: 25%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            border: 10px solid #white;
+            background-color:white;
+            border-radius: 40px 40px 0px 40px;
+        }
+
+        .useBox button {
+            width: 95%;
+            height: 95%;
+            font-size: x-large;
+            border: 10px solid #3803fa;
+            background-color:white;
+            color:#3803fa;
+            border-radius: 40px 40px 0px 40px;
+        }
+
+        .useBox div:hover, button:hover {
+            background-color: #6b3dff;
+            border: 10px solid #6b3dff;
+            color:white;;
+        }        
+
+        .footer {
+            height:10%;
+            color:white;
+            text-align: center;
+            background: rgb(100, 100, 100);
+        }
+
+        @media screen and (max-width: 900px) {
+            
+        }
+
+        @media screen and (min-width: 901px) {
+            .menuBox{ 
+                width: 600px;
+            }
+
+            .useBox {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>    
+    <div class="storeBox">
+        <div class="header"><p>PACE</p></div>
+        <div class="contentBox">
+            <div class="menuBox">
+                <div class="tableBox1">
+                    <table class="menuTable">
+                        <thead>
+                            <th></th>
+                            <th>내역</th>
+                            <th>개수</th>
+                            <th>가격</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="num">1</td>
+                                <td>아메리카노</td>
+                                <td id="num">1</td>
+                                <td id="price">2,500</td>
+                            </tr>
+                            <tr>
+                                <td id="num">2</td>
+                                <td>라떼</td>
+                                <td id="num">2</td>
+                                <td id="price">3,000</td>
+                            </tr>
+                            <tr>
+                                <td id="num">3</td>
+                                <td>마카롱</td>
+                                <td id="num">1</td>
+                                <td id="price">2,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tableBox2">
+                    <table class="totalTable">
+                        <tbody>
+                            <tr>
+                                <td id="list">총 개수</td>
+                                <td id="num">4 개</td>
+                            </tr>
+                            <tr>
+                                <td id="list">총 가격</td>
+                                <td id="num">7,500 원</td>
+                            </tr>
+                            <tr>
+                                <td id="list">적립 가능 금액</td>
+                                <td id="num">75 원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="useBox"> 
+                <div>
+                    <button id="btn2">포인트 적립</br>(얼굴인식 카메라 실행)</button>
+                </div>
+                <div>
+                    <button id="backBtn">뒤로가기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        Point By Face<br>
+        by. 김련경 신지수 김지원<br>
+        ⓒPACE
+    </footer>
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    username = '{{ username }}'
+    var chatSocket = new WebSocket(
+        'ws://' + window.location.host +
+        '/ws/test/' + username + '/');
+    chatSocket.onmessage = function (e2) {
+        console.log(e2);
+        var data = JSON.parse(e2.data);
+        var message = data['message'];
+        if (message == "complete")
+            location.href = "{% url 'Shistory' %}"
+    };
+    chatSocket.onopen = function (e2) {
+        console.log("연결 성공");
+    };
+    chatSocket.onclose = function (e2) {
+        console.error(username);
+        console.error('Chat socket closed unexpectedly');
+    };
+    document.querySelector("#btn2").addEventListener("click", (e) => {
+        chatSocket.send(JSON.stringify({
+            'message': "shareme - > alarm",
+            'change': "call_cam"
+        }));
+    });
+
+    document.querySelector("#backBtn").addEventListener("click", (e) => {
+        location.href = '../';
+    });
+</script>
+</html>

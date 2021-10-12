@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'paceweb/css/history.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="pointContainer">
+        <div class="logo">PACE</div>
+        <div class="pointBox">
+            <table class="point_table">
+                <caption>
+                    <p class="user_phoneNumber">{{user_point.user_id}}</p>
+                    <p class="user_text">님</p>
+                </caption>
+                <tbody>
+                    <tr class="add">
+                        <th>적립 포인트</th>
+                        <td>
+                            <p class="point" id="add_point">1000</p>
+                            <p class="text">원</p>
+                        </td>
+                    </tr>
+                    <tr class="use">
+                        <th>사용 포인트</th>
+                        <td>
+                            <input class="input_point" id="use_point" type="text">
+                            <p class="text">원</p>
+                        </td>
+                    </tr>
+                    <tr class="total">
+                        <th>누적 포인트</th>
+                        <td>
+                            <p class="point" id="total_point">{{user_point.user_point}}</p>
+                            <p class="text">원</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="btnBox">
+            <button id="useBtn">
+                사용하기
+            </button>
+            <button id="addBtn">
+                적립하기
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        Point By Face<br>
+        by. 김련경 신지수 김지원<br>
+        ⓒPACE
+    </footer>
+    <script>
+        const add_point = document.getElementById("add_point").innerHTML;
+        const use_point = document.getElementById("use_point");
+        const total_point = document.getElementById("total_point").innerText;
+        var use = 0;
+
+        // 포인트 사용 버튼 동작
+        document.getElementById("useBtn").addEventListener('click', (e) => {
+            console.log("포인트를 " + use_point.value + "원 사용합니다.");
+
+            isValue(use_point.value);
+        });
+
+        function isValue(value) {
+            if(value != null && value != '') {
+                const question = confirm(value+" 포인트를 사용하시겠습니까?");
+
+                // Would you like to your points? yes!
+                if (question == true)
+                    usedPoint(value)
+
+            } else {
+                alert("입력값이 없습니다. 다시 입력해주세요.");
+            }
+        }
+
+        // uesd point(DB 연동 필요. DB의 point 값을 total 값으로 업데이트 해야함)
+        function usedPoint(value) {
+            if(value > parseInt(total_point)) {
+                alert("포인트가 부족하여 사용 불가합니다.");
+            }
+            else {
+                use = value;
+            }
+        }
+
+        // add point(DB 연동 필요. DB의 point 값을 total 값으로 업데이트 해야함)
+        document.getElementById("addBtn").addEventListener('click', (e3) => {
+            console.log("포인트를 적립합니다.");
+
+            var total = parseInt(total_point) + parseInt(add_point) - use;
+
+            postPoint(total);
+
+            location.href = "{% url 'Store' %}"
+
+            chatSocket.send(JSON.stringify({
+                'message': "init",
+                'change': ""
+            }));
+        });
+
+        // DB에 포인트 저장 위해 view 파일로 계산된 point 값을 내보냄
+        function postPoint(point) {
+            $.ajax({
+                method: "POST",
+                url: "{% url 'Shistory' %}",
+                data: {
+                    "message": point,
+                    "csrfmiddlewaretoken" : "{{csrf_token}}"
+                },
+                success: function(response) {
+                    console.log("success");
+                },
+                error: function(response) {
+                    console.log("error");
+                }
+            });
+        }
+
+        // 통신스크립트
+
+        username = '{{ username }}'
+
+        var chatSocket = new WebSocket(
+            'ws://' + window.location.host +
+            '/ws/test/' + username + '/');
+
+
+        document.querySelector("#useBtn").addEventListener("click", (e3) => {
+            chatSocket.send(JSON.stringify({
+                'message': "Shisotry->Chistory",
+                'change': use_point.value
+            }));
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PACE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'paceweb/css/home.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="exBox">
+      <div class="logo">PACE</div>
+      <br>
+      <div class="ex">
+        <p>얼굴인식을 통해 포인트를 적립하는 웹 어플리케이션 PACE</p><br>
+        <p>어떤 화면을 선택하면 되나요?</p>
+        <p>가게에서 계산 시 볼 화면 → 메인화면</p>
+        <p>손님이 계산 시 볼 화면 → 손님화면</p>
+      </div>
+    </div>
+    <div class="btnBox">
+      <button class="camera"
+              id="cameraBtn">
+        메인 화면으로 가기
+      </button>
+      <button class="history" 
+              id="historyBtn">
+        손님 화면으로 가기
+      </button>
+
+    </div>
+  </div>
+  <footer class="footer">
+      Point By Face<br>
+      by. 김련경 신지수 김지원<br>
+      ⓒPACE
+  </footer>
+
+
+  <script>
+    document.getElementById("cameraBtn").addEventListener("click", loadCamera);
+    document.getElementById("historyBtn").addEventListener("click", changPage);
+
+    function loadCamera(e) {
+      location.href = '/Store';
+    }
+
+    function changPage(e) {
+      location.href = '/Custom';
+    }
+  </script>
+</body>
+
+</html>

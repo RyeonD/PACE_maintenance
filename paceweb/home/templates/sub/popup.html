@@ -1,0 +1,22 @@
+{% load static %}
+
+<html>
+
+<head>
+  <title>Video Streaming Demonstration</title>
+</head>
+
+<body>
+  <h1>Video Streaming Demonstration</h1>
+  <img id="bg" src="{% url 'call_cam' %}">
+  <br>
+  <textarea id="chat_log" cols="100" rows="20"></textarea>
+  <br>
+</body>
+<script>
+  setTimeout(function () {
+    document.getElementById('bg').src="{% url 'open_img' %}";
+  }, 15000);
+</script>
+
+</html>

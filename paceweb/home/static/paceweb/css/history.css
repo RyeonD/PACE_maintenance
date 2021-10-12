@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+
+
+@media screen and (max-width: 600px) {
+  
+    .logo{
+      font-size: 3.5rem;
+    }
+    
+    .btnBox * {
+      font-size:1.2rem;
+  
+    }
+
+    .user_phoneNumber, .user_text {
+        font-size:1.5rem;
+    }
+
+    .point_table th, .text,.point,.input_point{
+        font-size:1rem;
+    }
+
+  }
+  
+  @media screen and (min-width: 601px) and (max-width: 950px) {
+    .logo{
+        font-size: 3.7rem;
+      }
+      
+      .btnBox * {
+        font-size: 1.4rem;
+    
+      }
+  
+      .user_phoneNumber, .user_text {
+          font-size: 1.8rem;
+      }
+  
+      .point_table th, .text,.point,.input_point{
+          font-size:1.4rem;
+      }
+  }
+  
+  @media screen and (min-width: 950px) {
+    .logo{
+        font-size: 4.5rem;
+      }
+      
+      .btnBox * {
+        font-size: 1.7rem;
+    
+      }
+  
+      .user_phoneNumber, .user_text {
+          font-size: 2rem;
+      }
+  
+      .point_table th, .text,.point,.input_point{
+          font-size:1.7rem;
+      }
+  }
+  
+
+
+html,body{
+    height:100%;
+    margin: 0 auto;
+    font-family: 'Gugi', cursive;
+}
+
+.footer {
+    height:10%;
+    color:white;
+    text-align: center;
+    background: rgb(100, 100, 100);
+  }
+
+.pointContainer {
+    height:90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#11054E;
+}
+
+.logo {
+    height:20%;
+    text-align: center;
+    color: white;
+    line-height: 200%;
+}
+
+caption {
+    color: white;
+}
+
+.pointBox {
+    background-color:#7345FF;
+    border-radius: 0px 40px 40px 40px;
+    width:50%;
+    height:67%;
+}
+
+.point_table{
+    width:80%;
+    margin:auto;
+}
+.btnBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+    height:23%
+}
+
+.btnBox * {
+    width: 30%;
+    height:60%;
+    margin:1%;
+    background-color: #7345FF;
+    color: white;
+    border: none;
+    font-family: 'Gugi', cursive;
+    border-radius: 40px 40px 0px 40px;
+}
+
+
+.point_table caption {
+    text-align: right;
+    padding: 0% 5%;
+}
+
+.point_table caption p {
+    display: inline-block;
+}
+
+.user_phoneNumber {
+    text-decoration: underline;
+}
+
+.point_table th {
+    text-align: start;
+    background:#7345FF;
+    color:white;
+    border:3px solid white;
+    padding: 0% 3%;
+}
+
+.point_table td {
+    text-align: right;
+    width: 50%;
+    background: white;
+    padding: 0% 3%;
+}
+
+.point_table tbody p {
+    display: inline-block;
+}
+
+
+.input_point {
+    width: 60%;
+    height: 35%;
+    text-align: end; 
+    border-radius: 5px;
+    font-family: 'Gugi', cursive;
+}

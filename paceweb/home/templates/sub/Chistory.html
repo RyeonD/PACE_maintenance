@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'paceweb/css/history.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+        username = '{{ username }}'
+
+        var chatSocket = new WebSocket(
+            'ws://' + window.location.host +
+            '/ws/test/' + username + '/');
+
+        chatSocket.onmessage = function (e3) {
+            console.log(e3)
+            var data = JSON.parse(e3.data);
+            var message = data['message'];
+            var change = data['change'];
+            if (message == "init")
+                location.href = "{% url 'Custom' %}"
+            else document.getElementById('use_point').innerText = change
+        };
+
+        document.addEventListener("DOMContentLoaded", (e2) => {
+            console.log("history->store")
+            chatSocket.onopen = function (e) {
+                chatSocket.send(JSON.stringify({
+                    'message': "complete",
+                    'change': ' '
+
+                }))
+            };
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div class="pointContainer">
+        <div class="logo">PACE</div>
+        <div class="pointBox">
+            <table class="point_table">
+                <caption>
+                    <p class="user_phoneNumber">{{user_point.user_id}}</p>
+                    <p class="user_text">님</p>
+                </caption>
+                <tbody>
+                    <tr class="add">
+                        <th>적립 포인트</th>
+                        <td>
+                            <p class="point" id="add_point">1000</p>
+                            <p class="text">원</p>
+                        </td>
+                    </tr>
+                    <tr class="use">
+                        <th>사용 포인트</th>
+                        <td>
+                            <p class="point" id="use_point"></p>
+                            <p class="text">원</p>
+                        </td>
+                    </tr>
+                    <tr class="total">
+                        <th>누적 포인트</th>
+                        <td>
+                            <p class="point" id="total_point">{{user_point.user_point}}</p>
+                            <p class="text">원</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        Point By Face<br>
+        by. 김련경 신지수 김지원<br>
+        ⓒPACE
+    </footer>
+</body>
+
+</html>

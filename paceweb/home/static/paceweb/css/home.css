@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+@media screen and (max-width: 600px) {
+  
+  .exBox{
+    font-size: 0.9rem;
+  }
+  .logo{
+    font-size: 4rem;
+  }
+  
+  .btnBox {
+    height:60%;
+    width:70%;
+  }
+  
+  .btnBox * {
+    width:36%;
+    height:55%;
+    font-size: 1rem;
+
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+ 
+  .exBox{
+    font-size: 1rem;
+  }
+  .logo{
+    font-size: 4rem;
+  }
+  
+  .btnBox {
+    height:60%;
+    width:65%;
+  }
+  
+  .btnBox * {
+    width:40%;
+    height:55%;
+    font-size: 1.5rem;
+
+  }
+}
+
+@media screen and (min-width: 801px) {
+
+  .exBox{
+    font-size: 1rem;
+  }
+  .logo{
+    font-size: 4rem;
+  }
+  
+  .btnBox {
+    height:60%;
+    width:60%;
+  }
+  
+  .btnBox * {
+    width:35%;
+    height:55%;
+    font-size: 1.5rem;
+
+  }
+}
+
+body,button{
+  font-family: 'Gugi', cursive;
+}
+
+html,body{
+  height:100%;
+  margin: 0 auto;
+}
+
+.container{
+  height:90%;
+  background-color:#11054E;
+  font-family: 'Gugi', cursive;
+  display:flex;
+  flex-direction: column;
+}
+
+.container *{
+  margin:auto;
+}
+.exBox{
+  color:white;
+}
+.logo{
+  text-align: center;
+}
+.ex {
+  text-align: center;
+}
+
+.btnBox {
+  background-color: rgb(255, 255, 255);
+  border-radius:0px 40px 40px 40px;
+  display:flex;
+  margin-top: 0;
+}
+
+.btnBox * {
+  margin:auto;
+  color:white;
+  border: none;
+  text-align: center;
+}
+
+.camera {
+  border-radius: 0px 40px 40px 40px;
+  border: 10px solid #3803FA;
+  background-color:white;
+  color:#3803FA;
+}
+
+.camera:hover{
+  background-color:#3803FA;
+  color:white;
+}
+
+.history {
+  border-radius: 40px 40px 0px 40px;
+  border: 10px solid #6B3DFF;
+  background-color:white;
+  color:#6B3DFF;
+}
+
+.history:hover{
+  background-color:#6B3DFF;
+  color:white;
+}
+
+.footer {
+  height:10%;
+  color:white;
+  text-align: center;
+  background: rgb(100, 100, 100);
+}
