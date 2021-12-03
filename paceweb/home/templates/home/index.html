@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="{% static 'paceweb/css/home.css' %}">
 </head>
 
-<body>
+ <!-- 기존 코드 -->
+<!-- <body>
   <div class="container">
     <div class="exBox">
       <div class="logo">PACE</div>
@@ -31,6 +32,55 @@
         손님 화면으로 가기
       </button>
 
+    </div>
+  </div>
+  <footer class="footer">
+      Point By Face<br>
+      by. 김련경 신지수 김지원<br>
+      ⓒPACE
+  </footer>
+
+
+  <script>
+    document.getElementById("cameraBtn").addEventListener("click", loadCamera);
+    document.getElementById("historyBtn").addEventListener("click", changPage);
+
+    function loadCamera(e) {
+      location.href = '/Store';
+    }
+
+    function changPage(e) {
+      location.href = '/Custom';
+    }
+  </script>
+</body> -->
+
+<!-- 새 코드: 첫 메인 페이지 로그인 -->
+<body>
+  <div class="container">
+    <div class="exBox">
+      <div class="logo">PACE</div>
+      <br>
+      <div class="ex">
+        <p>얼굴인식을 통해 포인트를 적립하는 웹 어플리케이션 PACE</p>
+        <br>
+        <p class="title">로그인</p>
+        <br>
+        <div class="signBox">
+          <div class="signInputBox">
+            <input class="store_id" id="store_id" type="number" placeholder="사업자등록번호">
+            <br>
+            <input class="store_pw" id="store_pw" type="text" placeholder="패스워드">
+          </div>
+          <button class="sgininBtn" id="sgininBtn">
+            로그인
+          </button>
+          <div class="optionBox">
+            <a href="/test">회원가입</a>
+             / <a href="/test">비밀번호 찾기</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <footer class="footer">

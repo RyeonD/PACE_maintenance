@@ -8,8 +8,11 @@
   .logo{
     font-size: 4rem;
   }
+  .title{
+    font-size: 2rem;
+  }
   
-  .btnBox {
+  /* .btnBox {
     height:60%;
     width:70%;
   }
@@ -19,7 +22,7 @@
     height:55%;
     font-size: 1rem;
 
-  }
+  } */
 }
 
 @media screen and (min-width: 601px) and (max-width: 800px) {
@@ -30,8 +33,11 @@
   .logo{
     font-size: 4rem;
   }
+  .title{
+    font-size: 2rem;
+  }
   
-  .btnBox {
+  /* .btnBox {
     height:60%;
     width:65%;
   }
@@ -41,29 +47,12 @@
     height:55%;
     font-size: 1.5rem;
 
-  }
+  } */
 }
 
 @media screen and (min-width: 801px) {
 
-  .exBox{
-    font-size: 1rem;
-  }
-  .logo{
-    font-size: 4rem;
-  }
   
-  .btnBox {
-    height:60%;
-    width:60%;
-  }
-  
-  .btnBox * {
-    width:35%;
-    height:55%;
-    font-size: 1.5rem;
-
-  }
 }
 
 body,button{
@@ -96,7 +85,7 @@ html,body{
   text-align: center;
 }
 
-.btnBox {
+/* .btnBox {
   background-color: rgb(255, 255, 255);
   border-radius:0px 40px 40px 40px;
   display:flex;
@@ -132,7 +121,7 @@ html,body{
 .history:hover{
   background-color:#6B3DFF;
   color:white;
-}
+} */
 
 .footer {
   height:10%;

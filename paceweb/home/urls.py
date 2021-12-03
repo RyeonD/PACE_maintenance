@@ -12,4 +12,5 @@ urlpatterns = [
     path('Store', views.Store.as_view(), name='Store'),
     path('Shistory', views.Shistory.as_view(), name='Shistory'),
     path('Custom', views.Custom.as_view(),name='Custom'),
+    path('test', views.test, name="test"),
 ]
