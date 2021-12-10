@@ -2,3 +2,5 @@
 database/
 paceweb/*.py
 django_pace/
+__pycache__/*.pyc
+db.sqlite3
