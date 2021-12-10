@@ -1,2 +1,4 @@
-__pycache__/*.pyc
-db.sqlite3
+
+database/
+paceweb/*.py
+django_pace/
