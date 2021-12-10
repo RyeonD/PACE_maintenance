@@ -1,6 +1,6 @@
 
 database/
-paceweb/*.py
+paceweb/my_setting.py
 django_pace/
 __pycache__/*.pyc
 db.sqlite3
